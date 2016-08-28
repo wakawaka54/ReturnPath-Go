@@ -3,4 +3,6 @@ go:
  - tip
 
 script:
- - ./build.sh
+ - ls -all
+ - cd ./rpapi
+ - go test -v
