@@ -1,0 +1,90 @@
+﻿body {
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+canvas {
+    max-width: 800px;
+    text-align: center;
+    display: inline-block !important;
+}
+
+.barchart-container {
+    text-align: center;
+}
+
+.navbar-brand {
+    margin: auto, 0;
+    text-align: center;
+}
+
+.table-site {
+    table-layout: fixed;
+}
+
+.table-col {
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.pagination > li {
+    cursor: pointer;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"]
+{
+    width: 100%;
+}
+
+/*
+    ******************** Custom Styles
+*/
+
+.col-center {
+    float: none;
+    margin: 0 auto;
+}
+
+.footer-netcore {
+    width:100px;
+    height: auto;
+}
+
+.footer-netcore-text {
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.footer-stormtrooper {
+    width: 40px;
+    height: auto;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+}

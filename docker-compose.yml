@@ -1,0 +1,24 @@
+version: '2'
+services:
+
+  rp-frontend:
+    container_name: rpfrontend-go
+    build: ./rpfrontend
+    ports:
+      - "1415:1400"
+    networks:
+      - public
+    environment:
+      - GO_APIADDRESS=http://127.0.0.1:1410
+
+  rp-backend:
+    container_name: rpbackend-go
+    build: ./rpapi
+    ports:
+      - "1410:1337"
+    networks:
+      - public
+
+networks:
+  public:
+    driver: bridge

@@ -1,0 +1,16 @@
+{
+    "Hostname": "0.0.0.0",
+    "Port": "1337",
+    "BoringWords": [
+        "is", "by", "with", "on", "in", "it", "were", "be", "into", "their", "would",
+        "been", "this", "including", "such", "over", "under", "or", "but", "not",
+        "on", "sold", "use", "up", "some", "who", "he", "held", "its", "which",
+        "billion", "other", "first", "united", "one", "will", "two", "more",
+        "during", "three", "four", "five", "six", "seven", "eight", "now",
+        "founded", "group", "now", "most", "us", "out", "per", "when", "led", "using",
+        "while", "site", "time", "top", "buy", "there", "those", "moved", "through",
+        "they", "used", "since", "between", "a", "was", "as", "at", "an", "has", "new",
+        "also", "are", "had", "after", "percent", "total", "my", "the", "and", "of", "to",
+        "for", "that", "from", "announced", "have"
+    ]
+}
