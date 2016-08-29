@@ -17,16 +17,7 @@ const maxSentencesLimit = 100
 Route: /
 */
 func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Why are you here?")
-	w.WriteHeader(http.StatusOK)
-}
-
-//Options
-/*
-Route: /
-Method: OPTIONS
-*/
-func Options(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Are you lost? :c")
 	w.WriteHeader(http.StatusOK)
 }
 
