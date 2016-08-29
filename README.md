@@ -4,6 +4,10 @@
 
 ####[Design Document](DESIGN.md)
 
+[Live Demo](http://dev.waka.run)
+
+[Live API Running](http://api.waka.run/api/sentences)
+
 ## Building this Repo
 
 **`ReturnPath-Go`** is made up of two Go packages, **`rpfrontend`** and **`rpapi`**. In order to launch both of these packages, I have facilated a **docker-compose** file which should make it very easy to launch both of these.
@@ -77,7 +81,9 @@ Well, you don't have to use Docker! :ok_woman:
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Status Codes**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`200`** - OK - Everything worked
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`500`** - Internal Server Error - Couldn't parse a JSON response for some reason.
 
 #### POST `/api/sentences`
@@ -92,7 +98,9 @@ Well, you don't have to use Docker! :ok_woman:
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Status Codes**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`201`** - Created - New sentence was created
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`409`** - Conflict - Issue parsing request JSON data
 
 #### DELETE `/api/sentences/{id}`
@@ -101,7 +109,9 @@ Well, you don't have to use Docker! :ok_woman:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Example Url:** `/api/sentences/8520`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Status Codes**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`202`** - Accepted - Sentence was deleted
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`404`** - Not Found - Sentence with ID was not found
 
 #### GET `/api/sentences/statistics`
@@ -122,5 +132,7 @@ Well, you don't have to use Docker! :ok_woman:
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Status Codes**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`200`** - OK - Everything worked, statistics was sent back
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**`500`** - Internal Server Error - There was an issue parsing JSON data back to you
