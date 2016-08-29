@@ -1,3 +1,11 @@
+/*
+Tests API endpoints - Full End to End testing of API
+
+Injects an HTTP request through the Application Pipeline.
+
+assert - Utilize assertion style logic
+*/
+
 package main
 
 import (
@@ -11,11 +19,14 @@ import (
 
 const sentencesToAdd int = 5000
 
+//Application Pipeline
 var router http.Handler
 
-//Tests that router is working and that index path is alive
+//Tests that router is working and that server is up
 func TestMain(t *testing.T) {
+	//Configures application pipeline for end to end testing
 	router = SetupPipeline()
+
 	req, _ := http.NewRequest("GET", "/api/", nil)
 	res := httptest.NewRecorder()
 
@@ -24,7 +35,7 @@ func TestMain(t *testing.T) {
 	assert(res.Code == 200, "Response code should equal 200", t)
 }
 
-//Tests that OPTIONS request can be sent and receives OK response
+//Tests that OPTIONS request is handled and receives OK response
 func TestOptions(t *testing.T) {
 	req, _ := http.NewRequest("OPTIONS", "/api/sentences", nil)
 	res := httptest.NewRecorder()
@@ -140,7 +151,7 @@ func TestAddSentence(t *testing.T) {
 	assert(sentences[0].Sentence == sentence.Sentence, "First sentence should equal the added sentence", t)
 }
 
-//Tests that sentences can be added
+//Tests that sentences can be deleted
 func TestDeleteSentence(t *testing.T) {
 	sentence := sentences[0]
 
@@ -167,6 +178,9 @@ func TestGetStatistics(t *testing.T) {
 	assert(responseSchema[0].Count == sentencesToAdd, "Word count should equal number of sentences added", t)
 }
 
+
+//Assertion functionality
+//Example: assert(bob.name == "bob", "Bobs name is suppose to be Bob", TESTING_HANDLE)
 func assert(condition bool, msg string, t *testing.T) {
 	if !condition {
 		t.Error(msg, condition)

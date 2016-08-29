@@ -1,3 +1,10 @@
+/*
+Contains the Sentence data model used throughout.
+
+Sentences have a filter capability which should probably be extended to another
+struct.
+*/
+
 package main
 
 import "strings"
@@ -5,6 +12,8 @@ import "strings"
 //Application datastore
 var sentences = Sentences{}
 
+
+//Words to ignore, instantiated by Main.go
 var BoringWords []string
 
 type Sentence struct {

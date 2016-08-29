@@ -1,3 +1,10 @@
+/*
+Configure mux.Router with application routes from Routes.go
+
+Call NewRouter() to get the fully configured Router
+Attaches the Logger middleware to the pipeline
+*/
+
 package main
 
 import (
@@ -6,6 +13,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
+//Preferred route prefix
+//[HOSTNAME].[com]/[prefix]/[route]
+//Allows typical prefix of "V1" or "api"
+//eg. "/api"
 const prefix string = "/api"
 
 type Route struct {
@@ -17,6 +28,7 @@ type Route struct {
 
 type Routes []Route
 
+//Creates mux.Router object which implements http.Handler
 func NewRouter() *mux.Router {
 	r := mux.NewRouter().StrictSlash(true)
 

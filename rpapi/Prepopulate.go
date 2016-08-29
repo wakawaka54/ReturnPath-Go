@@ -1,3 +1,10 @@
+/*
+Reads data/data.txt and prepopulates the dataset with Sentence objects
+
+Relies of GO_HOME environment variable and binary must be ran from project directory
+or GO_HOME must be set to project path
+*/
+
 package main
 
 import (

@@ -1,3 +1,23 @@
+/*
+Adds Config.json functionality, also reads environment variables.
+
+Environment variables take presidence over config.json values.
+
+BuildConfig() returns a Config object with configuration values
+
+ENV_VARS
+
+GO_HOME = Path to config.json, usually the project directory, not needed if
+					binary is started from within the project folder
+GO_PORT = Listening port
+GO_HOSTNAME = Listening IP Address, use 0.0.0.0 to avoid localhost, 127.0.0.1 problems
+
+Config.json
+Port = Listening Port
+Hostname = Listening IP Address
+BoringWords = Words to ignore when adding sentences
+*/
+
 package main
 
 import (

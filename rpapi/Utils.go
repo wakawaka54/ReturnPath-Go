@@ -1,3 +1,11 @@
+/*
+Contains utility functions and structs such as:
+
+SortableMap - Implements sorting capability to traditional Go map
+
+
+*/
+
 package main
 
 import (
@@ -6,11 +14,15 @@ import (
 	"strings"
 )
 
+//Map struct that implements sorting on the traditional map structure
+//Specifically it can sort maps of type map[string]int based on the int value
 type SortableMap struct {
 	Map    map[string]int
 	Sorted []string
 }
 
+//Increment a key value by one
+//Specific functionality for Statistics
 func (s *SortableMap) Increment(key string) {
 	if _, ok := s.Map[key]; ok == false {
 		s.Sorted = append(s.Sorted, key)
@@ -18,10 +30,12 @@ func (s *SortableMap) Increment(key string) {
 	s.Map[key]++
 }
 
+//ISortable method
 func (s SortableMap) Less(i, j int) bool {
 	return s.Map[s.Sorted[i]] > s.Map[s.Sorted[j]]
 }
 
+//ISortable method
 func (s SortableMap) Swap(i, j int) {
 	toJ := s.Sorted[i]
 	toI := s.Sorted[j]
@@ -30,10 +44,12 @@ func (s SortableMap) Swap(i, j int) {
 	s.Sorted[j] = toJ
 }
 
+//ISortable method
 func (s SortableMap) Len() int {
 	return len(s.Sorted)
 }
 
+//Returns the first N number of sorted elements
 func (s SortableMap) First(n int) StatisticsSchemas {
 	m := StatisticsSchemas{}
 	for i := 0; i != n && i < len(s.Sorted); i++ {
@@ -42,6 +58,7 @@ func (s SortableMap) First(n int) StatisticsSchemas {
 	return m
 }
 
+//Ensures that pagnation is within acceptable bounds
 func pagnationUtil(vals url.Values, length int) (limit, offset int) {
 	limit = 20
 	offset = 0
@@ -66,6 +83,7 @@ func pagnationUtil(vals url.Values, length int) (limit, offset int) {
 	return
 }
 
+//Checks if a2 is contained inside a1
 func arrayContains(a1, a2 []string) bool {
 	for _, tag := range a2 {
 		subcontain := false
@@ -83,7 +101,7 @@ func arrayContains(a1, a2 []string) bool {
 	return true
 }
 
-//Check if string has
+//Check if string has only Alpha characters and ignores puncuation
 func isStringAlpha(s string) (bool, string) {
 	var filtered string
 
