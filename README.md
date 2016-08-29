@@ -13,14 +13,14 @@
 **`ReturnPath-Go`** is made up of two Go packages, **`rpfrontend`** and **`rpapi`**. In order to launch both of these packages, I have facilated a **docker-compose** file which should make it very easy to launch both of these.
 
 1. Make sure you have `docker-compose` and `docker` installed on your machine (don't want to use docker? See below!)
-2. Clone the repo using `git clone https://github.com/wakawaka54/ReturnPath-Go.git`
-3. Enter into the repo `cd ReturnPath-Go`
-4. Run `docker-compose build`
+2. Clone the repo using **`git clone https://github.com/wakawaka54/ReturnPath-Go.git`**
+3. Enter into the repo **`cd ReturnPath-Go`**
+4. Run **`docker-compose build`**
   * This should build both images, depending on how you have `docker-compose` configured, you may need to run this as sudo
-5. Run `docker-compose up`
+5. Run **`docker-compose up`**
   * This should start up both images
-6. The frontend should be mapped to `http://localhost:1400`
-7. The backend should be mapped to `http://localhost:1337`
+6. The frontend should be mapped to **`http://localhost:1400`**
+7. The backend should be mapped to **`http://localhost:1337`**
 
 ### What if I don't want to use Docker?
 
@@ -28,13 +28,13 @@ Well, you don't have to use Docker! :ok_woman:
 
 1. You will need one of the latest versions of Go. I used `go1.7` for this particular project.
 2. Find the **`src/`** folder that goes along with your installation of `Go`. If you don't know what I am talking about, [Go](https://golang.org/doc/install) follow the guide. No pun intended.
-3. You can `git clone https://github.com/wakawaka54/ReturnPath-Go.git` directly into the **/src** folder
-4. `cd ReturnPath-Go.git` then `cd rpapi` to get into the **`rpapi`** directory.
-5. Run `go get` to fetch all the dependencies and use `go install` to generate the binary into the **/bin** folder of your **Go** installation
-6. You can now `rpapi` to run the binary if you have your **$PATH** variable modified to include the **/bin** folder
+3. You can **`git clone https://github.com/wakawaka54/ReturnPath-Go.git`** directly into the **/src** folder
+4. **`cd ReturnPath-Go.git`** then **`cd rpapi`** to get into the **rpapi** directory.
+5. Run **`go get`** to fetch all the dependencies and use **`go install`** to generate the binary into the **/bin** folder of your **Go** installation
+6. You can now **`rpapi`** to run the binary if you have your **$PATH** variable modified to include the **/bin** folder
   * If you don't run `rpapi` from inside the **rpapi** directory, you will get some configuration errors. You can fix these by setting the **rpapi** directory path to the `GO_HOME` environment variable
-7. You can now `cd ..` and `cd rpfrontend` and use `go get` to fetch all the dependencies and `go install` to generate the binary
-8. Again, if you have the **$PATH** variable modified correctly, you should be able to run `rpfrontend` to begin the frontend.
+7. You can now **`cd ..`** and **`cd rpfrontend`** and use **`go get`** to fetch all the dependencies and **`go install`** to generate the binary
+8. Again, if you have the **$PATH** variable modified correctly, you should be able to run **`rpfrontend`** to begin the frontend.
  * If you don't see any data showing up, this is probably because the port mappings are changed on your machine. Set the `ApiAddress` in `config.json` in the **rpfrontend** directory to the correct **rpapi** address on your machine.
 
 
