@@ -53,6 +53,10 @@ and shed a tear that my API did not meet some of the criteria.
 
 **10 PM** - Added Draft README and DESIGN documents to GitHub repo.
 
+####`Monday`
+
+**4 PM** - Updated Documentation throughout project and tried to parallelize Statistics endpoint.
+
 ###Concept
 
 The idea to create an application to do word counting arose from the accessibility of sentence based data from Wikipedia,
